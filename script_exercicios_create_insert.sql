@@ -94,18 +94,54 @@ SELECT * FROM curso;
 INSERT INTO aluno(nome,email,data_nasc,id_curso)
 	VALUES ('João Ferreira', 'jf@email.com','2005/02/22','1');
     
-SELECT * FROM ALUNO
+SELECT * FROM ALUNO;
 
     
+-- ---------------------------------------------------
+
+CREATE DATABASE ex05_faculdade;
+USE ex05_faculdade;
+
+CREATE TABLE professor(
+	id_professor      INT   AUTO_INCREMENT    PRIMARY KEY, 
+    nome              VARCHAR(100),
+    especialidade     VARCHAR(80)
+);
+
+CREATE TABLE curso(
+	id_curso    	  INT   AUTO_INCREMENT  PRIMARY KEY,
+    nome  		      VARCHAR(100),
+    carga_horaria     INT,
+    id_professor      INT,
+    FOREIGN KEY (id_professor) REFERENCES professor (id_professor)
+);
+
+CREATE TABLE aluno(
+	id_aluno    INT   AUTO_INCREMENT  PRIMARY KEY,
+	nome              VARCHAR(100),
+    email             VARCHAR(80),
+    id_curso          INT,
+    FOREIGN KEY (id_curso) REFERENCES curso (id_curso)
+);
+
     
+INSERT INTO professor(nome,especialidade) 
+	VALUES('Aristóteles', 'Tecnologia');
     
-    
-    
-    
-    
-    
+INSERT INTO professor(nome,especialidade) 
+	VALUES('Reinaldo', 'Teologia');
     
 
+SELECT * FROM professor;
+
+INSERT INTO curso (nome,carga_horaria)
+	VALUES('ADS', '180');
+    
+INSERT INTO curso(nome,carga_horaria)
+   VALUES('Medicina', '260');   
+
+
+SELECT * FROM curso;
 
 
 
