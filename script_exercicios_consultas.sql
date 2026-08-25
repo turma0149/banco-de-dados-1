@@ -38,8 +38,7 @@ INSERT INTO PEDIDO (id_produto) VALUES ('3');
 
  -- Mostrar todas as colunas e todos os dados
 SELECT * FROM PEDIDO;
- 
- 
+  
  -- Mostrar todas as colunas e todos os dados
 SELECT * FROM produto;
 
@@ -50,7 +49,7 @@ SELECT nome,valor FROM produto;
  SELECT nome AS 'produto', valor FROM produto;
  
  -- Filtros  (>, <, >=, <=, <>)
- SELECT nome, qtd_estoque FROM produto
+ SELECT id_produto,nome, qtd_estoque FROM produto
  WHERE qtd_estoque > 50;
  
  SELECT nome, qtd_estoque FROM produto
@@ -83,19 +82,19 @@ SELECT * FROM produto
 WHERE nome LIKE '%a'; -- termina com o nha
  
 SELECT * FROM produto
-WHERE nome LIKE 'cho%'; -- começa com cho
+WHERE nome LIKE 'chocol%'; -- começa com cho
 
 SELECT * FROM produto
-WHERE nome LIKE '%no%'; -- não interessa a posição início ou fim
+WHERE nome LIKE '%piruli%'; -- não interessa a posição início ou fim
  
 -- FUNÇÕES 
-SELECT COUNT(*) FROM produto
+SELECT COUNT(*) AS 'qtd_produtos' FROM produto
 WHERE valor < 5.00;
 
-SELECT AVG(valor) FROM produto;
-SELECT MAX(qtd_estoque) FROM produto;
-SELECT MIN(qtd_estoque) FROM produto;
-SELECT MIN(valor) FROM produto; 
+SELECT AVG(valor) AS 'media_produtos' FROM produto;
+SELECT MAX(qtd_estoque)  AS 'maior_qtd_produtos'FROM produto;
+SELECT MIN(qtd_estoque) AS 'menor_qtd_produtos' FROM produto;
+SELECT MIN(valor) AS 'menor_valor_produtos' FROM  produto; 
  
 -- ORDERNAR 
 SELECT * FROM produto 
