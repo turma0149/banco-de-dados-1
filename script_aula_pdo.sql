@@ -9,7 +9,13 @@ CREATE TABLE projetos (
 );
 -- 3 inserts
 INSERT INTO projetos (nome,duracao,responsavel) 
-	VALUES ('Projeto 01', '3 meses', 'Maria');
+	VALUES ('Projeto 01', '3', 'Maria');
+
+INSERT INTO projetos (nome,duracao,responsavel) 
+	VALUES ('Projeto 2', '9', 'Lucas');
+    
+INSERT INTO projetos (nome,duracao,responsavel) 
+	VALUES ('Projeto 01', '10', 'Fernando');
     
 -- 1 select 
 SELECT * FROM projetos;
